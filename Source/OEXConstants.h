@@ -136,5 +136,6 @@ typedef NS_ENUM(NSUInteger, OEXVideoSpeed) {
 #define GOTO_HARVARD_DETAIL @"studyHarvardDetail"
 #define HARVARD_DAYS @"hmm_days_"
 #define BIND_PHONE_ALERTVIEW @"bindPhone_alertView_"
+#define SHOW_PRIVARY_ALERT @"show_privary_warm_alert"
 
 #endif

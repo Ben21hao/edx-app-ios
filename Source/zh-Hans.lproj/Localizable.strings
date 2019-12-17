@@ -1122,4 +1122,21 @@
  */
 "ABOUNT_US_MESSAGE"="英荔商学院（www.EliteMBA.cn）是广东英荔国际教育科技有限公司旗下的商业管理类互联网课堂。\n\n英荔与国内外商业管理学术界资深的教授和专家联手，精心设计并制作高质量且极具知识价值的体系化在线课程。同时，筛选并引进国外优质教育内容，向学习者提供经英荔团队打造后的本土化版本。\n\n尽己所能地向更多学习者传递知识是教育者们的共同追求。英荔期望为教育者提供更有效的传递途径，增加知识的触及范围。在此，向各位专家、教授发出诚挚的开课邀请，期待创造、引入更多优质的课程资源，让知识在多元的世界产生更多元的价值。";
 
-
+/* 用户协议 User License Agreement */
+"LICENSE_AGREEMENT"="用户协议";
+/* 隐私政策 Privacy Policy*/
+"PRIVACY_POLICY"="隐私政策";
+/* 免责声明 Disclaimer*/
+"DISCLAIMER"="免责声明";
+/* 只有同意遵守英荔商学院的用户协议、免责声明和隐私政策，才能创建账号。
+Account can only be created after you agree to our User Agreement, Disclaimer and Privacy Policy.*/
+"ITEM_AGREET"="只有同意遵守英荔商学院的用户协议、免责声明和隐私政策，才能创建账号。";
+/* 感谢使用英荔商学院！\n依据《网络安全法》，为更好地保障您的合法权益，我们调整并更新了《用户协议》《隐私政策》和《免责声明》的相关内容，注册时请务必仔细阅读，充分理解全部内容后再勾选同意。登录后，您可随时在「设置」页面查阅协议内容。
+Thank you for using our service!\nTo better safeguard your rights and interests, we've modified and updated our User Agreement, Privacy Policy and Disclaimer according to The Cybersecurity Law of the People's Republic of China. Please read carefully and fully comprehend all of the terms before you check the box when signing up. You may read all of the terms in Setting at any time.*/
+"PRIVARY_VERSION_WARM"="感谢使用英荔商学院！\n依据《网络安全法》，为更好地保障您的合法权益，我们调整并更新了《用户协议》《隐私政策》和《免责声明》的相关内容，注册时请务必仔细阅读，充分理解全部内容后再勾选同意。登录后，您可随时在「设置」页面查阅协议内容。";
+/* 我知道了 Got it*/
+"GOT_IT_TEXT"="我知道了";
+/* 以后提醒 Later*/
+"LATER_TEXT"="以后提醒";
+/* 协议更新提醒 Reminder*/
+"PRIVACY_REMIND_TITLE"="协议更新提醒";

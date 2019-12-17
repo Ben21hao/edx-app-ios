@@ -24,7 +24,7 @@ class AgreementTextView: UITextView {
     @objc func setup(for type: AgreementType, config: OEXConfig?) {
         let style = OEXMutableTextStyle(weight: .normal, size: .xSmall, color: OEXStyles.shared().neutralDark())
         style.lineBreakMode = .byWordWrapping
-        style.alignment = .center
+//        style.alignment = .center
         let platformName = config?.platformName() ?? ""
         let prefix: String
         switch type {

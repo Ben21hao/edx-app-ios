@@ -95,7 +95,7 @@ class TDFindCourseCell: UITableViewCell {
         }
         
         courseTitle.snp.makeConstraints { (make) in
-            make.left.equalTo(courseImage.snp_right).offset(8)
+            make.left.equalTo(courseImage.snp.right).offset(8)
             make.top.equalTo(courseImage)
             make.right.equalTo(bgView).offset(-11)
         }

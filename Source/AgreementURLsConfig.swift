@@ -14,9 +14,9 @@ fileprivate enum AgreementURLsKeys: String, RawStringExtractable {
 }
 
 class AgreementURLsConfig : NSObject {
-    let eulaURL: URL?
-    let tosURL: URL?
-    let privacyPolicyURL: URL?
+    @objc let eulaURL: URL?
+    @objc let tosURL: URL?
+    @objc let privacyPolicyURL: URL?
     
     init(dictionary: [String: AnyObject]) {
         if let eulaURL = dictionary[AgreementURLsKeys.eulaURL] as? String {
@@ -44,7 +44,7 @@ class AgreementURLsConfig : NSObject {
 
 private let key = "AGREEMENT_URLS"
 extension OEXConfig {
-    var agreementURLsConfig : AgreementURLsConfig {
+    @objc var agreementURLsConfig : AgreementURLsConfig {
         return AgreementURLsConfig(dictionary: self[key] as? [String:AnyObject] ?? [:])
     }
 }

@@ -1145,3 +1145,22 @@
  EliteMBA (www.EliteMBA.cn) is a sub-brand of Guangdong Elite International Education & Technology Co., Ltd. focusing on the development of MBA online classroom.\n\nEliteMBA teams up with senior professors and experts in business management academics at home and abroad to design and produce high quality and knowledgeable systematic online courses. At the same time, we select and introduce high-quality foreign educational content to provide learners with a localized learning experience created by EliteMBA.\n\nIt is the common pursuit of educators to transfer knowledge to more learners as much as possible. EliteMBA expects to provide educators with more effective means of transmission and increase the reach of knowledge. Here, we would like to offer sincere invitations to experts and professors, and look forward to creating and introducing more high-quality curriculum resources, so that knowledge can generate more value in a diverse world.
  */
 "ABOUNT_US_MESSAGE"="EliteMBA (www.EliteMBA.cn) is a sub-brand of Guangdong Elite International Education & Technology Co., Ltd. focusing on the development of MBA online classroom.\n\nEliteMBA teams up with senior professors and experts in business management academics at home and abroad to design and produce high quality and knowledgeable systematic online courses. At the same time, we select and introduce high-quality foreign educational content to provide learners with a localized learning experience created by EliteMBA.\n\nIt is the common pursuit of educators to transfer knowledge to more learners as much as possible. EliteMBA expects to provide educators with more effective means of transmission and increase the reach of knowledge. Here, we would like to offer sincere invitations to experts and professors, and look forward to creating and introducing more high-quality curriculum resources, so that knowledge can generate more value in a diverse world.";
+
+/* 用户协议 User License Agreement */
+"LICENSE_AGREEMENT"="User License Agreement";
+/* 隐私政策 Privacy Policy*/
+"PRIVACY_POLICY"="Privacy Policy";
+/* 免责声明 Disclaimer*/
+"DISCLAIMER"="Disclaimer";
+/* 只有同意遵守英荔商学院的用户协议、免责声明和隐私政策，才能创建账号。
+Account can only be created after you agree to our User Agreement, Disclaimer and Privacy Policy.*/
+"ITEM_AGREET"="Account can only be created after you agree to our User Agreement, Disclaimer and Privacy Policy.";
+/* 感谢使用英荔商学院！\n依据《网络安全法》，为更好地保障您的合法权益，我们调整并更新了《用户协议》《隐私政策》和《免责声明》的相关内容，注册时请务必仔细阅读，充分理解全部内容后再勾选同意。登录后，您可随时在「设置」页面查阅协议内容。
+Thank you for using our service!\nTo better safeguard your rights and interests, we've modified and updated our User Agreement, Privacy Policy and Disclaimer according to The Cybersecurity Law of the People's Republic of China. Please read carefully and fully comprehend all of the terms before you check the box when signing up. You may read all of the terms in Setting at any time.*/
+"PRIVARY_VERSION_WARM"="Thank you for using our service!\nTo better safeguard your rights and interests, we've modified and updated our User Agreement, Privacy Policy and Disclaimer according to The Cybersecurity Law of the People's Republic of China. Please read carefully and fully comprehend all of the terms before you check the box when signing up. You may read all of the terms in Setting at any time.";
+/* 我知道了 Got it*/
+"GOT_IT_TEXT"="Got it";
+/* 以后提醒 Later*/
+"LATER_TEXT"="Later";
+/* 协议更新提醒 Reminder*/
+"PRIVACY_REMIND_TITLE"="Reminder";

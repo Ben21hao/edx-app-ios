@@ -80,6 +80,46 @@ OEXRegistrationViewControllerDelegate
     } else {
         [self showLoggedInContent:3];
     }
+    
+    [self requestPrivacyVersion];
+}
+
+- (void)requestPrivacyVersion { //协议版本
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSString *urlStr = @"https://oss.elitemba.cn/web_static/docs/version.json";
+    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"版本信息：%@",responseObject);
+        NSDictionary *responseDic = (NSDictionary *)responseObject;
+        if ([[responseDic allKeys] containsObject:@"version"] && [[responseDic allKeys] containsObject:@"notify"]) {
+            [self judgePrivacyVersion:responseDic[@"version"] shouldShow:[responseDic[@"notify"] boolValue]];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"版本请求失败：%@",error);
+    }];
+}
+
+- (void)judgePrivacyVersion:(NSString *)version shouldShow:(BOOL)notify {
+    if (notify == NO) { //不显示
+        return;
+    }
+    
+    NSString *localVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SHOW_PRIVARY_ALERT];
+    BOOL isDescending = [version compare:localVersion options:NSNumericSearch] == NSOrderedDescending; //是否是降序
+    if (!isDescending) { //服务器版本号 = 本地的版本号
+        return;
+    }
+    
+    NSString *message = [Strings privaryVersionWarm];
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:[Strings privacyRemindTitle] message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:[Strings gotItText] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[NSUserDefaults standardUserDefaults] setValue:version forKey:SHOW_PRIVARY_ALERT];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[Strings laterText] style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVc addAction:sureAction];
+    [alertVc addAction:cancelAction];
+    [self.containerViewController.childViewControllers.firstObject presentViewController:alertVc animated:YES completion:nil];
 }
 
 - (void)removeCurrentContentController {

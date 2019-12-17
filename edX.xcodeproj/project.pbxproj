@@ -6276,6 +6276,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CURRENT_PROJECT_VERSION = 2.18.1;
 				DEVELOPMENT_TEAM = 567YW4PL68;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -6329,6 +6330,7 @@
 					"$(PROJECT_DIR)/Libraries/OCMock",
 					"$(PROJECT_DIR)/Source/TDFile/TDThirdManager/WechatSDK_NoPay",
 				);
+				MARKETING_VERSION = 2.18.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.elitemba.iOS;
@@ -6775,6 +6777,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CURRENT_PROJECT_VERSION = 2.18.1;
 				DEVELOPMENT_TEAM = 567YW4PL68;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -6827,6 +6830,7 @@
 					"$(PROJECT_DIR)/Libraries/OCMock",
 					"$(PROJECT_DIR)/Source/TDFile/TDThirdManager/WechatSDK_NoPay",
 				);
+				MARKETING_VERSION = 2.18.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.elitemba.iOS;
@@ -6854,6 +6858,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				CURRENT_PROJECT_VERSION = 2.18.1;
 				DEVELOPMENT_TEAM = 567YW4PL68;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -6907,6 +6912,7 @@
 					"$(PROJECT_DIR)/Libraries/OCMock",
 					"$(PROJECT_DIR)/Source/TDFile/TDThirdManager/WechatSDK_NoPay",
 				);
+				MARKETING_VERSION = 2.18.1;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.elitemba.iOS;

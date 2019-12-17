@@ -208,6 +208,8 @@
     self.agreementTextView.agreementDelegate = self;
     // To adjust textView according to its content size.
     self.agreementTextViewHeight.constant = self.agreementTextView.contentSize.height + [self.environment.styles standardHorizontalMargin];
+    
+    self.agreementTextView.hidden = YES;
 }
 
     //setting accessibility identifiers for developer automation use

@@ -76,7 +76,6 @@ class TDMainSiteViewController: UIViewController {
         self.title = Strings.tabHome
         setViewConstraint()
         getMainSiteData(isFirst: true)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

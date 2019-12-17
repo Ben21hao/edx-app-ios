@@ -101,7 +101,7 @@ extension TDFeedbackInputCell: UITextViewDelegate {
         if text == "" {//删除
             return true
         }
-        if range.location >= maxCount {
+        if range.length == 0, range.location >= maxCount {
             return false
         }
         return true

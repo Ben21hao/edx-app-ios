@@ -80,6 +80,7 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
     NSUInteger index = (NSUInteger)(self.scrollView.contentOffset.x / TDWidth);
     [self.categoryView changeItemWithTargetIndex:index];
     self.selectedIndex = index;

@@ -162,7 +162,7 @@ extension TDFindCourseViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.dataArray.count == 0 {
-            let cell = TDStudyNonCell(style: .default, reuseIdentifier: AccountViewCell.identifier)
+            let cell = TDStudyNonCell(style: .default, reuseIdentifier: TDStudyNonCell.cellIdentifier)
             cell.dataNonCell(message: Strings.noCourses, iconStr: "data_non_image", isHiddenButton: true, colorString: "#f9f9f9")
             return cell
         }

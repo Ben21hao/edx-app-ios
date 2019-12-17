@@ -56,6 +56,8 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
 @property (strong, nonatomic) OEXRegistrationStyles* styles;
 @property (strong, nonatomic) OEXTextStyle *toggleButtonStyle;
 
+@property (nonatomic,strong) UIButton *selectButton;
+
 @end
 
 @implementation OEXRegistrationViewController
@@ -191,11 +193,20 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
     }
 }
 
--(void) setUpAgreementTextView {
+-(void)setUpAgreementTextView {
     [self.agreementTextView setupFor:AgreementTypeSignUp config:self.environment.config];
     self.agreementTextView.agreementDelegate = self;
     CGSize size = [self.agreementTextView sizeThatFits:CGSizeMake(self.scrollView.frame.size.width - 2 * self.styles.formMargin, CGFLOAT_MAX)];
     self.agreementTextView.frame = CGRectMake(0, 0, size.width, size.height + [[OEXStyles sharedStyles] standardHorizontalMargin]);
+    
+    self.selectButton = [[UIButton alloc] init];
+    [self.selectButton setImage:[UIImage imageNamed:@"no_select_pay"] forState:UIControlStateNormal];
+    [self.selectButton setImage:[UIImage imageNamed:@"select_pay"] forState:UIControlStateSelected];
+    [self.selectButton addTarget:self action:@selector(selectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)selectButtonAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
 }
 
 // MARK: AgreementTextViewDelegate
@@ -355,8 +366,13 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
     [self.scrollView addSubview:self.registerButton];
     offset = offset + 40;
     
+    CGFloat buttonwidth = 26;
     [self.scrollView addSubview:self.agreementTextView];
-    [self.agreementTextView setFrame:CGRectMake(horizontalSpacing + 10, offset + 10, width - 3 * horizontalSpacing, self.agreementTextView.frame.size.height)];
+    [self.agreementTextView setFrame:CGRectMake(horizontalSpacing + buttonwidth, offset + 10, width - 3 * horizontalSpacing - 16, self.agreementTextView.frame.size.height)];
+    
+    [self.scrollView addSubview:self.selectButton];
+    self.selectButton.frame = CGRectMake(horizontalSpacing, offset + 10, buttonwidth, 36);
+
     offset = offset + self.agreementTextView.frame.size.height + [[OEXStyles sharedStyles] standardHorizontalMargin] * 2;
     [self.scrollView setContentSize:CGSizeMake(width, offset)];
 }
@@ -476,6 +492,12 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
         [self showInputErrorAlert];
         return;
     }
+    
+    if (!self.selectButton.selected) {
+        [self.view makeToast:Strings.itemAgreet duration:0.8 position:CSToastPositionCenter];
+        return;
+    }
+    
     //Setting parameter 'honor_code'='true'
     [parameters setObject:@"true" forKey:@"honor_code"];
 

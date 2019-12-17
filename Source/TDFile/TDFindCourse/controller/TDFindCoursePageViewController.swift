@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TDFindCoursePageViewController: UIViewController {//,UIGestureRecognizerDelegate
+class TDFindCoursePageViewController: UIViewController {
 
     typealias Environment = NetworkManagerProvider & OEXRouterProvider & OEXSessionProvider & OEXConfigProvider & OEXAnalyticsProvider
     private let environment : Environment

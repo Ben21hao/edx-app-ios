@@ -14,6 +14,7 @@
 #import "OEXInterface.h"
 #import "OEXStyles.h"
 #import "NSObject+OEXReplaceNull.h"
+#import "OEXUserLicenseAgreementViewController.h"
 
 typedef NS_ENUM(NSUInteger, OEXMySettingsAlertTag) {
     OEXMySettingsAlertTagNone,
@@ -79,12 +80,15 @@ typedef NS_ENUM(NSUInteger, OEXMySettingsAlertTag) {
 
 #pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 2;
+    }
+    else if (section == 1) {
+        return 3;
     }
     return 1;
 }
@@ -116,6 +120,27 @@ typedef NS_ENUM(NSUInteger, OEXMySettingsAlertTag) {
                 break;
         }
     }
+    else if (indexPath.section == 1) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"serviceItemCell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"serviceItemCell"];
+            cell.textLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:16];
+            cell.textLabel.textColor = [UIColor colorWithHexString:@"#2e313c"];
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = Strings.licenseAgreement;
+                    break;
+                case 1:
+                    cell.textLabel.text = Strings.privacyPolicy;
+                    break;
+                default:
+                    cell.textLabel.text = Strings.disclaimer;
+                    break;
+            }
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        return cell;
+    }
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"logoutCell"];
     if (!cell) {
@@ -141,6 +166,9 @@ typedef NS_ENUM(NSUInteger, OEXMySettingsAlertTag) {
             [self judgeAppStoreVersion];
         }
     }
+    else if (indexPath.section == 1) {
+        [self gotoUserItemVC:indexPath.row];
+    }
     else {
         if (self.logoutHandle) {
             self.logoutHandle();
@@ -148,6 +176,22 @@ typedef NS_ENUM(NSUInteger, OEXMySettingsAlertTag) {
     }
 }
 
+#pragma mark - 服务条款
+- (void)gotoUserItemVC:(NSInteger)type {
+    
+    OEXConfig *config = [OEXConfig sharedConfig];
+    NSURL *url = config.agreementURLsConfig.eulaURL;
+    if (type == 1) {
+        url = config.agreementURLsConfig.privacyPolicyURL;
+    }
+    else if (type == 2) {
+        url = config.agreementURLsConfig.tosURL;
+    }
+    OEXUserLicenseAgreementViewController* viewController = [[OEXUserLicenseAgreementViewController alloc] initWithContentURL:url];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
+#pragma mark - 版本号
 - (void)judgeAppStoreVersion { //通过App Store来判断
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
